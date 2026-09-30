@@ -4,19 +4,55 @@ import os
 from datetime import datetime
 
 # --- 在这里配置所有同学的博客信息 ---
+# --- 在这里配置所有同学的博客信息 ---
 BLOGS_CONFIG = [
     {
-        "name": "Y11516",
-        "repo": "Y11516/Y11516.github.io",
-        "exclude": ["index.html", "tools.html", "about.html", "dashboard.html", "bugku.html", "ctfhub.html"] # 排除非博客页面
+        "name": "魏紫钰",
+        "repo": "https://Y11516.github.io",
+        "exclude": ["index.html", "tools.html", "about.html", "dashboard.html", "bugku.html", "ctfhub.html"] 
     },
-    # 以后有同学的博客，就复制上面的大括号内容，加在这里
-    # {
-    #     "name": "同学A",
-    #     "repo": "username/repo-name",
-    #     "exclude": ["index.html", "about.html"]
-    # },
+    {
+        "name": "郭梓文",
+        "repo": "https://gz2008.github.io/task01/",
+        "exclude": ["index.html"] 
+    },
+    {
+        "name": "王海岩",
+        "repo": "https://why-ww.github.io/",
+        "exclude": ["index.html"]
+    },
+    {
+        "name": "何芊宏",
+        "repo": "heqianhong1114/myblog",
+        "exclude": ["index.html"]
+    },
+    {
+        "name": "王冠壹",
+        "repo": "wgy0828/wgy0828",
+        "exclude": ["index.html"]
+    },
+    {
+        "name": "张紫陌",
+        "repo": "m02142008/m02142008.github.io",
+        "exclude": ["index.html"]
+    },
+    {
+        "name": "刘璧瑞",
+        "repo": "12128848/12128848.github.io",
+        "exclude": ["index.html"]
+    },
+    {
+        "name": "刘欣赢",
+        "repo": "eclair-tracy/eclair-tracy.github.io",
+        "exclude": ["index.html"]
+    },
+    {
+        "name": "刘家怡",
+        "repo": "gysbfff/gysbfff.github.io",
+        "exclude": ["index.html"]
+    },
 ]
+# --- 配置结束 ---
 # --- 配置结束 ---
 
 HEADERS = {"Accept": "application/vnd.github.v3+json"}
