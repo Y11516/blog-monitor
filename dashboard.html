@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客监控面板</title>
+    <style>
+        body { background: #0a0e17; color: #ccd6f6; font-family: 'Inter', sans-serif; padding: 40px; }
+        h1 { text-align: center; color: #64ffda; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .card { background: #112240; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin: 0 0 15px 0; color: #64ffda; font-size: 1.1rem; }
+        .count { font-size: 3rem; font-weight: bold; color: #64ffda; margin: 10px 0; }
+        .repo { font-size: 0.8rem; color: #8892b0; word-break: break-all; }
+        .updated { font-size: 0.8rem; color: #8892b0; margin-top: 15px; }
+        .last-update { text-align: center; margin-top: 40px; color: #8892b0; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <h1>📊 博客监控面板</h1>
+    <div class="grid" id="blog-grid"></div>
+    <div class="last-update" id="last-update"></div>
+
+    <script>
+        async function loadDashboard() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                const grid = document.getElementById('blog-grid');
+                
+                data.blogs.forEach(blog => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>${blog.name}</h3>
+                        <div class="count">${blog.count}</div>
+                        <div class="repo">${blog.repo}</div>
+                        <div class="updated">最后更新: ${blog.updated_at}</div>
+                    `;
+                    grid.appendChild(card);
+                });
+                
+                document.getElementById('last-update').textContent = `数据最后更新于: ${data.last_updated}`;
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                document.getElementById('last-update').textContent = '加载数据失败，请检查 data.json 是否存在。';
+            }
+        }
+        loadDashboard();
+    </script>
+</body>
+</html>
