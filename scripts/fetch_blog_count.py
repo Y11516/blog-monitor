@@ -17,14 +17,15 @@ BLOGS_CONFIG = [
         "include_keywords": ["writeup-", "ctfhub", "bugku"], 
         "exclude_keywords": ["index", "tools", "about", "dashboard", "readme", "tags", "categories", "archives"]
     },
-    {
+     {
         "name": "郭梓文",
         "repo": "gz2008/task01",
         "branch": "main",
-        # 👇 郭梓文 0篇：说明他的文章没有 posts 和 writeup。我们改为空列表，并严格排除主页
-        "include_keywords": [], 
-        "exclude_keywords": ["index", "readme", "tags", "categories", "archives", "assets", "css", "js"]
+        # 白名单加入 "bugku"，因为他的文章都在 bugku 文件夹里
+        "include_keywords": ["bugku"], 
+        "exclude_keywords": ["index", "readme", "tags", "categories", "archives"]
     },
+
     {
         "name": "王海岩",
         "repo": "why-ww/why-ww.github.io",
@@ -37,10 +38,11 @@ BLOGS_CONFIG = [
         "name": "何芊宏",
         "repo": "heqianhong1114/myblog",
         "branch": "main",
-        # 👇 何芊宏跌到1篇：说明他的文章既不是posts也不是md。改为空列表，让黑名单去过滤
-        "include_keywords": [], 
-        "exclude_keywords": ["index", "readme", "tags", "categories", "archives", "css", "js", "assets"]
+        # 白名单加入 "bugku-"，这样所有 bugku- 开头的文章都能被统计
+        "include_keywords": ["bugku-"], 
+        "exclude_keywords": ["index", "readme", "tags", "categories", "archives"]
     },
+
     {
         "name": "王冠壹",
         "repo": "wgy0828/wgy0828",
