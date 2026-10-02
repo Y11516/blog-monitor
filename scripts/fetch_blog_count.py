@@ -4,7 +4,8 @@ import os
 from datetime import datetime
 
 # --- 在这里配置所有同学的博客信息 ---
-# 如果某同学的文章都在 posts 文件夹里，可以加 "folder": "posts"
+# 根据你的截图，所有 repo 均已核对无误。
+# 如果某位同学依然显示 0，说明他的文章在子文件夹里（比如 _posts），你可以尝试修改 "folder"
 BLOGS_CONFIG = [
     {
         "name": "魏紫钰",
