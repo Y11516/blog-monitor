@@ -5,14 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客监控面板</title>
     <style>
-        /* 基础重置与字体设定 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #0f1115; /* 极简的深邃灰黑背景，比纯黑更高级 */
+            background-color: #0f1115;
             color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             padding: 60px 24px;
@@ -22,27 +17,10 @@
             align-items: center;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* 头部样式 */
-        .header {
-            width: 100%;
-            max-width: 1200px;
-            margin-bottom: 48px;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #f3f4f6;
-            margin-bottom: 8px;
-        }
-        .header p {
-            color: #9ca3af;
-            font-size: 0.9rem;
-        }
-
-        /* 网格布局 */
+        .header { width: 100%; max-width: 1200px; margin-bottom: 48px; text-align: center; }
+        .header h1 { font-size: 2rem; font-weight: 600; letter-spacing: 1px; color: #f3f4f6; margin-bottom: 8px; }
+        .header p { color: #9ca3af; font-size: 0.9rem; }
+        
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -51,10 +29,12 @@
             max-width: 1200px;
         }
 
-        /* 卡片样式 */
+        /* 卡片变成链接后的样式重置 */
         .card {
-            background-color: #1a1d24; /* 卡片颜色比背景略浅 */
-            border: 1px solid rgba(255, 255, 255, 0.06); /* 极其细腻的边框 */
+            text-decoration: none; /* 去掉下划线 */
+            color: inherit;        /* 继承文字颜色 */
+            background-color: #1a1d24;
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 16px;
             padding: 24px;
             display: flex;
@@ -62,38 +42,37 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
-        /* 卡片悬停微动效 */
         .card:hover {
             transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5); /* 深邃的阴影 */
+            background-color: #1c2028; /* 悬停时微微变亮 */
+            border-color: rgba(59, 130, 246, 0.3); /* 悬停时边框泛蓝 */
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
         }
 
-        /* 姓名 */
+        /* 右上角的跳转箭头提示 */
+        .card .arrow {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 1rem;
+            color: #4b5563;
+            transition: all 0.3s;
+        }
+        .card:hover .arrow {
+            color: #3b82f6; /* 悬停时箭头变蓝 */
+            transform: translate(2px, -2px);
+        }
+
         .card .name {
             font-size: 1.05rem;
             font-weight: 500;
             color: #e5e7eb;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        /* 姓名旁边的小圆点装饰，提升设计感 */
-        .card .name::after {
-            content: '';
-            display: block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: #3b82f6; /* 柔和的蓝色点缀 */
-            box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
         }
 
-        /* 核心数字 */
         .card .count {
             font-size: 3.5rem;
             font-weight: 700;
@@ -104,7 +83,6 @@
             font-variant-numeric: tabular-nums;
         }
         
-        /* 数字后面的单位 */
         .card .count-unit {
             font-size: 1rem;
             font-weight: 400;
@@ -112,7 +90,6 @@
             margin-left: 4px;
         }
 
-        /* 仓库信息 */
         .card .repo {
             font-size: 0.75rem;
             color: #6b7280;
@@ -120,7 +97,6 @@
             word-break: break-all;
         }
 
-        /* 更新时间，固定在底部 */
         .card .updated {
             margin-top: auto;
             font-size: 0.7rem;
@@ -129,14 +105,7 @@
             padding-top: 12px;
         }
 
-        /* 加载状态 */
-        .loading {
-            grid-column: 1 / -1;
-            text-align: center;
-            color: #6b7280;
-            padding: 40px;
-            font-size: 0.9rem;
-        }
+        .loading { grid-column: 1 / -1; text-align: center; color: #6b7280; padding: 40px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -157,14 +126,19 @@
                 const data = await response.json();
                 const grid = document.getElementById('blog-grid');
                 
-                // 清空加载状态
                 grid.innerHTML = '';
                 
                 data.blogs.forEach(blog => {
-                    const card = document.createElement('div');
+                    // 使用 <a> 标签让卡片可点击
+                    const card = document.createElement('a');
                     card.className = 'card';
-                    // 使用更优雅的 HTML 结构
+                    
+                    // 如果有 url 则跳转，否则回退到 repo 首页（防止空链接）
+                    card.href = blog.url || `https://github.com/${blog.repo}`;
+                    card.target = '_blank'; // 在新标签页打开
+                    
                     card.innerHTML = `
+                        <div class="arrow">↗</div>
                         <div class="name">${blog.name}</div>
                         <div class="count">${blog.count}<span class="count-unit">篇</span></div>
                         <div class="repo">${blog.repo}</div>
