@@ -18,8 +18,9 @@ BLOGS_CONFIG = [
         "repo": "gz2008/task01",
         "url": "https://gz2008.github.io/task01/",
         "branch": "main",
-        "include_keywords": ["bugku"], 
-        "exclude_keywords": ["index", "readme", "tags", "categories", "archives"]
+        # 👇 改为空列表，统计所有文件，让黑名单去过滤
+        "include_keywords": [], 
+        "exclude_keywords": ["index", "readme", "tags", "categories", "archives", "css", "js", "assets"]
     },
     {
         "name": "王海岩",
@@ -34,8 +35,9 @@ BLOGS_CONFIG = [
         "repo": "heqianhong1114/myblog",
         "url": "https://heqianhong1114.github.io/myblog/",
         "branch": "main",
-        "include_keywords": ["bugku-"], 
-        "exclude_keywords": ["index", "readme", "tags", "categories", "archives"]
+        # 👇 改为空列表，统计所有文件
+        "include_keywords": [], 
+        "exclude_keywords": ["index", "readme", "tags", "categories", "archives", "css", "js", "assets"]
     },
     {
         "name": "王冠壹",
