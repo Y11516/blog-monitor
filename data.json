@@ -1,68 +1,142 @@
 {
-  "blogs": [
+  "labs": [
+    "Bugku",
+    "CTFHub",
+    "Pikachu",
+    "SQLi-Labs",
+    "Upload-Labs",
+    "DVWA",
+    "Burp-Labs",
+    "RCE-Labs",
+    "单点靶场"
+  ],
+  "students": [
     {
       "name": "魏紫钰",
-      "repo": "Y11516/Y11516.github.io",
-      "url": "https://y11516.github.io/",
-      "count": 312,
-      "updated_at": "2026-10-22 04:23:25"
+      "counts": {
+        "Bugku": 58,
+        "CTFHub": 60,
+        "Pikachu": 45,
+        "SQLi-Labs": 64,
+        "Upload-Labs": 17,
+        "DVWA": 26,
+        "Burp-Labs": 3,
+        "RCE-Labs": 39,
+        "单点靶场": 1
+      }
     },
     {
       "name": "郭梓文",
-      "repo": "gz2008/task01",
-      "url": "https://gz2008.github.io/task01/",
-      "count": 106,
-      "updated_at": "2026-10-22 04:23:25"
+      "counts": {
+        "Bugku": 30,
+        "CTFHub": 59,
+        "Pikachu": 18,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 0,
+        "单点靶场": 0
+      }
     },
     {
       "name": "王海岩",
-      "repo": "why-ww/why-ww.github.io",
-      "url": "https://why-ww.github.io/",
-      "count": 48,
-      "updated_at": "2026-10-22 04:23:26"
+      "counts": {
+        "Bugku": 29,
+        "CTFHub": 12,
+        "Pikachu": 0,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 0,
+        "单点靶场": 0
+      }
     },
     {
       "name": "何芊宏",
-      "repo": "heqianhong1114/myblog",
-      "url": "https://heqianhong1114.github.io/myblog/",
-      "count": 154,
-      "updated_at": "2026-10-22 04:23:26"
+      "counts": {
+        "Bugku": 32,
+        "CTFHub": 14,
+        "Pikachu": 43,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 2,
+        "单点靶场": 0
+      }
     },
     {
       "name": "王冠壹",
-      "repo": "wgy0828/wgy0828",
-      "url": "https://wgy0828.github.io/wgy0828/",
-      "count": 23,
-      "updated_at": "2026-10-22 04:23:27"
+      "counts": {
+        "Bugku": 22,
+        "CTFHub": 0,
+        "Pikachu": 0,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 0,
+        "单点靶场": 0
+      }
     },
     {
       "name": "张紫陌",
-      "repo": "m02142008/m02142008.github.io",
-      "url": "https://m02142008.github.io/",
-      "count": 61,
-      "updated_at": "2026-10-22 04:23:27"
+      "counts": {
+        "Bugku": 30,
+        "CTFHub": 28,
+        "Pikachu": 0,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 0,
+        "单点靶场": 0
+      }
     },
     {
       "name": "刘璧瑞",
-      "repo": "12128848/12128848.github.io",
-      "url": "https://12128848.github.io/",
-      "count": 46,
-      "updated_at": "2026-10-22 04:23:27"
+      "counts": {
+        "Bugku": 32,
+        "CTFHub": 0,
+        "Pikachu": 0,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 1,
+        "单点靶场": 0
+      }
     },
     {
       "name": "刘欣赢",
-      "repo": "eclair-tracy/eclair-tracy.github.io",
-      "url": "https://eclair-tracy.github.io/",
-      "count": 64,
-      "updated_at": "2026-10-22 04:23:28"
+      "counts": {
+        "Bugku": 31,
+        "CTFHub": 33,
+        "Pikachu": 0,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 0,
+        "单点靶场": 0
+      }
     },
     {
       "name": "刘家怡",
-      "repo": "gysbfff/gysbfff.github.io",
-      "url": "https://gysbfff.github.io/",
-      "count": 76,
-      "updated_at": "2026-10-22 04:23:28"
+      "counts": {
+        "Bugku": 30,
+        "CTFHub": 41,
+        "Pikachu": 0,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 0,
+        "单点靶场": 0
+      }
     }
   ],
-  "last_updated": "2026-10-22 04:23:28"
+  "last_updated": "2026-10-22 08:38:57"
 }
