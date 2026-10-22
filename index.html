@@ -3,127 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客监控面板</title>
+    <title>班级靶场进度监控矩阵</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #0f1115;
-            color: #ffffff;
+            background-color: #0a0e17; /* 深色背景 */
+            color: #e2e8f0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             padding: 60px 24px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            -webkit-font-smoothing: antialiased;
         }
-        .header { width: 100%; max-width: 1200px; margin-bottom: 48px; text-align: center; }
-        .header h1 { font-size: 2rem; font-weight: 600; letter-spacing: 1px; color: #f3f4f6; margin-bottom: 8px; }
-        .header p { color: #9ca3af; font-size: 0.9rem; }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+        .header { width: 100%; max-width: 1200px; margin-bottom: 40px; text-align: center; }
+        .header h1 { font-size: 1.8rem; font-weight: 600; color: #00f0ff; margin-bottom: 8px; letter-spacing: 2px;}
+        .header p { color: #6b7280; font-size: 0.9rem; }
+
+        /* 表格容器，处理横向滚动 */
+        .table-container {
             width: 100%;
             max-width: 1200px;
-        }
-
-        .card {
-            text-decoration: none;
-            color: inherit;
-            background-color: #1a1d24;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            overflow-x: auto;
+            background: #111520;
             border-radius: 16px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            background-color: #1c2028;
-            border-color: rgba(59, 130, 246, 0.3);
-            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
         }
 
-        .card .arrow {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            font-size: 1rem;
-            color: #4b5563;
-            transition: all 0.3s;
-        }
-        .card:hover .arrow {
-            color: #3b82f6;
-            transform: translate(2px, -2px);
+        /* 表头样式 */
+        thead th {
+            background-color: #1a1f2e;
+            color: #00f0ff;
+            padding: 18px 15px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-bottom: 2px solid rgba(0, 240, 255, 0.2);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            white-space: nowrap;
         }
 
-        .card .name { font-size: 1.05rem; font-weight: 500; color: #e5e7eb; margin-bottom: 20px; }
-        .card .count { font-size: 3.5rem; font-weight: 700; color: #ffffff; line-height: 1; margin-bottom: 4px; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
-        .card .count-unit { font-size: 1rem; font-weight: 400; color: #6b7280; margin-left: 4px; }
-        .card .repo { font-size: 0.75rem; color: #6b7280; margin-bottom: 24px; word-break: break-all; }
-        .card .updated { margin-top: auto; font-size: 0.7rem; color: #4b5563; border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 12px; }
+        /* 第一列（姓名）特殊样式，固定在左侧 */
+        thead th:first-child, tbody td:first-child {
+            position: sticky;
+            left: 0;
+            background-color: #151b28;
+            color: #ffffff;
+            font-weight: 500;
+            border-right: 2px solid rgba(0, 240, 255, 0.15);
+            z-index: 10;
+        }
+        thead th:first-child {
+            z-index: 11;
+            background-color: #1a1f2e;
+        }
 
-        .loading { grid-column: 1 / -1; text-align: center; color: #6b7280; padding: 40px; font-size: 0.9rem; }
+        /* 数据行样式 */
+        tbody td {
+            padding: 16px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            border-right: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 1.05rem;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* 鼠标悬浮行高亮 */
+        tbody tr:hover td {
+            background-color: rgba(0, 240, 255, 0.04);
+        }
+        tbody tr:hover td:first-child {
+            background-color: #1c2538;
+            color: #00f0ff;
+        }
+
+        /* 数字为 0 时的弱化显示 */
+        .count-zero { color: #4b5563; }
+        /* 有数据时的强调显示 */
+        .count-data { color: #64ffda; font-weight: bold; text-shadow: 0 0 10px rgba(100, 255, 218, 0.3); }
+
     </style>
 </head>
 <body>
+
     <div class="header">
-        <h1>博客监控面板</h1>
-        <p id="last-update">正在获取最新数据...</p>
+        <h1>🛡️ 靶场进度监控矩阵</h1>
+        <p id="last-update">正在加载数据...</p>
     </div>
 
-    <div class="grid" id="blog-grid">
-        <div class="loading">数据加载中...</div>
+    <div class="table-container">
+        <table id="matrix-table">
+            <thead>
+                <tr id="table-head">
+                    <!-- 表头由 JS 动态生成 -->
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- 数据由 JS 动态生成 -->
+            </tbody>
+        </table>
     </div>
 
     <script>
-        async function loadDashboard() {
+        async function loadMatrix() {
             try {
                 const response = await fetch('data.json');
                 const data = await response.json();
-                const grid = document.getElementById('blog-grid');
                 
-                grid.innerHTML = '';
+                const headRow = document.getElementById('table-head');
+                const tbody = document.getElementById('table-body');
                 
-                data.blogs.forEach(blog => {
-                    const card = document.createElement('a');
-                    card.className = 'card';
-                    
-                    // 核心逻辑：优先使用 url，如果没有 url，则跳转到博客主页（而不是代码仓库）
-                    if (blog.url && blog.url !== "") {
-                        card.href = blog.url;
-                    } else {
-                        // 容错处理：如果 url 忘了填，就尝试拼接标准的博客地址
-                        const username = blog.repo.split('/')[0];
-                        card.href = `https://${username}.github.io/`;
-                    }
-                    
-                    card.target = '_blank'; // 在新标签页打开
-                    
-                    card.innerHTML = `
-                        <div class="arrow">↗</div>
-                        <div class="name">${blog.name}</div>
-                        <div class="count">${blog.count}<span class="count-unit">篇</span></div>
-                        <div class="repo">${blog.repo}</div>
-                        <div class="updated">最后更新: ${blog.updated_at}</div>
-                    `;
-                    grid.appendChild(card);
+                // 1. 渲染表头：姓名 + 各个靶场
+                let headHTML = '<th>姓名 / 靶场</th>';
+                data.labs.forEach(lab => {
+                    headHTML += `<th>${lab}</th>`;
                 });
+                headRow.innerHTML = headHTML;
+
+                // 2. 渲染数据行
+                data.students.forEach(student => {
+                    let rowHTML = `<tr><td>${student.name}</td>`;
+                    data.labs.forEach(lab => {
+                        const count = student.counts[lab] || 0;
+                        // 根据数量给数字加样式
+                        if (count > 0) {
+                            rowHTML += `<td class="count-data">${count}</td>`;
+                        } else {
+                            rowHTML += `<td class="count-zero">0</td>`;
+                        }
+                    });
+                    rowHTML += '</tr>';
+                    tbody.innerHTML += rowHTML;
+                });
+
+                // 更新底部时间
+                document.getElementById('last-update').textContent = `最后更新: ${data.last_updated}`;
                 
-                document.getElementById('last-update').textContent = `数据最后更新于: ${data.last_updated}`;
             } catch (error) {
-                console.error('加载数据失败:', error);
-                document.getElementById('last-update').textContent = '数据加载失败，请检查 data.json 是否存在。';
+                console.error("加载数据失败:", error);
+                document.getElementById('last-update').textContent = '数据加载失败，请检查 data.json';
             }
         }
-        loadDashboard();
+        
+        loadMatrix();
     </script>
 </body>
 </html>
