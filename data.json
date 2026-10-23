@@ -43,7 +43,7 @@
       "name": "王海岩",
       "counts": {
         "Bugku": 29,
-        "CTFHub": 13,
+        "CTFHub": 14,
         "Pikachu": 0,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
@@ -59,7 +59,7 @@
         "Bugku": 32,
         "CTFHub": 14,
         "Pikachu": 43,
-        "SQLi-Labs": 4,
+        "SQLi-Labs": 6,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
@@ -113,7 +113,7 @@
       "name": "刘欣赢",
       "counts": {
         "Bugku": 31,
-        "CTFHub": 36,
+        "CTFHub": 42,
         "Pikachu": 0,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
@@ -127,7 +127,7 @@
       "name": "刘家怡",
       "counts": {
         "Bugku": 30,
-        "CTFHub": 44,
+        "CTFHub": 51,
         "Pikachu": 0,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
@@ -138,5 +138,5 @@
       }
     }
   ],
-  "last_updated": "2026-10-23 04:28:21"
+  "last_updated": "2026-10-23 23:44:24"
 }
