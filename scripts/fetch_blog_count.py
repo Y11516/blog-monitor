@@ -5,18 +5,19 @@ from datetime import datetime
 
 # --- 1. 靶场关键词映射表 ---
 # 只要文件路径里包含这些关键词，就归入对应的靶场
-LABS_MAPPING = {
+# --- 配置所有靶场的识别关键词 ---
+TARGETS_CONFIG = {
     "Bugku": ["bugku"],
-    "CTFHub": ["ctfhub"],
+    # 给 CTFHub 增加了 "web-" 和 "webf-"，因为何同学的命名习惯是 web-xxx
+    "CTFHub": ["ctfhub", "ctf_hub", "web-"], 
     "Pikachu": ["pikachu"],
-    "SQLi-Labs": ["sqli", "sqlilabs", "sqli-labs"],
-    "Upload-Labs": ["upload", "uploadlabs", "upload-labs"],
+    "SQLi-Labs": ["sqli-labs", "sqli_labs", "sqllibs", "less-", "sqli"],
+    "Upload-Labs": ["upload-labs", "upload_labs", "uploadlabs", "pass-"],
     "DVWA": ["dvwa"],
-    "Burp-Labs": ["burp"],
-    "RCE-Labs": ["rce"],
-    "单点靶场": ["single", "单点"] # 这个可能需要根据你实际的文件命名来调整
+    "Burp-Labs": ["burp-labs", "burp_labs", "burplabs"],
+    "RCE-Labs": ["rce-labs", "rce_labs", "rcelabs", "rce"],
+    "单点靶场": ["single", "单点"] 
 }
-
 # --- 2. 同学名单（精简版） ---
 BLOGS_CONFIG = [
     {"name": "魏紫钰", "repo": "Y11516/Y11516.github.io"},
