@@ -1,33 +1,27 @@
 {
-  "labs": [
-    "Bugku",
-    "CTFHub",
-    "Pikachu",
-    "SQLi-Labs",
-    "Upload-Labs",
-    "DVWA",
-    "Burp-Labs",
-    "RCE-Labs",
-    "单点靶场"
-  ],
-  "students": [
+  "blogs": [
     {
       "name": "魏紫钰",
-      "counts": {
+      "repo": "Y11516/Y11516.github.io",
+      "url": "https://y11516.github.io/",
+      "stats": {
         "Bugku": 58,
         "CTFHub": 60,
         "Pikachu": 45,
-        "SQLi-Labs": 64,
-        "Upload-Labs": 17,
-        "DVWA": 26,
+        "SQLi-Labs": 67,
+        "Upload-Labs": 15,
+        "DVWA": 28,
         "Burp-Labs": 3,
         "RCE-Labs": 39,
         "单点靶场": 1
-      }
+      },
+      "total": 316
     },
     {
       "name": "郭梓文",
-      "counts": {
+      "repo": "gz2008/task01",
+      "url": "https://gz2008.github.io/task01/",
+      "stats": {
         "Bugku": 30,
         "CTFHub": 59,
         "Pikachu": 18,
@@ -37,11 +31,14 @@
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
-      }
+      },
+      "total": 107
     },
     {
       "name": "王海岩",
-      "counts": {
+      "repo": "why-ww/why-ww.github.io",
+      "url": "https://why-ww.github.io/",
+      "stats": {
         "Bugku": 29,
         "CTFHub": 14,
         "Pikachu": 0,
@@ -51,25 +48,31 @@
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
-      }
+      },
+      "total": 43
     },
     {
       "name": "何芊宏",
-      "counts": {
+      "repo": "heqianhong1114/myblog",
+      "url": "https://heqianhong1114.github.io/myblog/",
+      "stats": {
         "Bugku": 32,
-        "CTFHub": 14,
+        "CTFHub": 73,
         "Pikachu": 43,
-        "SQLi-Labs": 6,
+        "SQLi-Labs": 16,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
-        "RCE-Labs": 2,
+        "RCE-Labs": 1,
         "单点靶场": 0
-      }
+      },
+      "total": 165
     },
     {
       "name": "王冠壹",
-      "counts": {
+      "repo": "wgy0828/wgy0828",
+      "url": "https://wgy0828.github.io/wgy0828/",
+      "stats": {
         "Bugku": 22,
         "CTFHub": 0,
         "Pikachu": 0,
@@ -79,11 +82,14 @@
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
-      }
+      },
+      "total": 22
     },
     {
       "name": "张紫陌",
-      "counts": {
+      "repo": "m02142008/m02142008.github.io",
+      "url": "https://m02142008.github.io/",
+      "stats": {
         "Bugku": 30,
         "CTFHub": 30,
         "Pikachu": 0,
@@ -93,11 +99,14 @@
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
-      }
+      },
+      "total": 60
     },
     {
       "name": "刘璧瑞",
-      "counts": {
+      "repo": "12128848/12128848.github.io",
+      "url": "https://12128848.github.io/",
+      "stats": {
         "Bugku": 32,
         "CTFHub": 0,
         "Pikachu": 0,
@@ -107,26 +116,15 @@
         "Burp-Labs": 0,
         "RCE-Labs": 1,
         "单点靶场": 0
-      }
+      },
+      "total": 33
     },
     {
       "name": "刘欣赢",
-      "counts": {
+      "repo": "eclair-tracy/eclair-tracy.github.io",
+      "url": "https://eclair-tracy.github.io/",
+      "stats": {
         "Bugku": 31,
-        "CTFHub": 44,
-        "Pikachu": 0,
-        "SQLi-Labs": 0,
-        "Upload-Labs": 0,
-        "DVWA": 0,
-        "Burp-Labs": 0,
-        "RCE-Labs": 0,
-        "单点靶场": 0
-      }
-    },
-    {
-      "name": "刘家怡",
-      "counts": {
-        "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 0,
         "SQLi-Labs": 0,
@@ -135,8 +133,26 @@
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
-      }
+      },
+      "total": 82
+    },
+    {
+      "name": "刘家怡",
+      "repo": "gysbfff/gysbfff.github.io",
+      "url": "https://gysbfff.github.io/",
+      "stats": {
+        "Bugku": 30,
+        "CTFHub": 52,
+        "Pikachu": 0,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 0,
+        "单点靶场": 0
+      },
+      "total": 82
     }
   ],
-  "last_updated": "2026-10-24 04:18:50"
+  "last_updated": "2026-10-24 09:12:41"
 }
