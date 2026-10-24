@@ -3,154 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>班级靶场进度监控矩阵</title>
+    <title>少数人靶场监控矩阵</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #0a0e17; /* 深色背景 */
-            color: #e2e8f0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            padding: 60px 24px;
-            min-height: 100vh;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .header { width: 100%; max-width: 1200px; margin-bottom: 40px; text-align: center; }
-        .header h1 { font-size: 1.8rem; font-weight: 600; color: #00f0ff; margin-bottom: 8px; letter-spacing: 2px;}
-        .header p { color: #6b7280; font-size: 0.9rem; }
 
-        /* 表格容器，处理横向滚动 */
-        .table-container {
+        /* 页面头部提示区 */
+        .header-area {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header-area h1 {
+            color: #58a6ff;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+        }
+        .header-area .tip {
+            color: #3fb950; /* 极客绿提示 */
+            font-size: 0.9rem;
+            background-color: rgba(63, 185, 80, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(63, 185, 80, 0.3);
+            display: inline-block;
+        }
+
+        .terminal-window {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-header {
+            background-color: #21262d;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #30363d;
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+        .terminal-dots { display: flex; gap: 8px; margin-right: 15px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+
+        .table-container {
             overflow-x: auto;
-            background: #111520;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            padding: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             text-align: center;
-        }
-
-        /* 表头样式 */
-        thead th {
-            background-color: #1a1f2e;
-            color: #00f0ff;
-            padding: 18px 15px;
-            font-weight: 600;
             font-size: 0.95rem;
-            border-bottom: 2px solid rgba(0, 240, 255, 0.2);
-            border-right: 1px solid rgba(255, 255, 255, 0.05);
-            white-space: nowrap;
         }
 
-        /* 第一列（姓名）特殊样式，固定在左侧 */
-        thead th:first-child, tbody td:first-child {
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #30363d;
+        }
+
+        th {
+            background-color: #21262d;
+            color: #58a6ff;
+            font-weight: bold;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+        }
+
+        /* 姓名列特殊处理 */
+        td:first-child, th:first-child {
+            text-align: left;
+            font-weight: bold;
+            background-color: #1c2128;
             position: sticky;
             left: 0;
-            background-color: #151b28;
-            color: #ffffff;
-            font-weight: 500;
-            border-right: 2px solid rgba(0, 240, 255, 0.15);
-            z-index: 10;
-        }
-        thead th:first-child {
-            z-index: 11;
-            background-color: #1a1f2e;
+            z-index: 2;
+            min-width: 100px;
         }
 
-        /* 数据行样式 */
-        tbody td {
-            padding: 16px 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            border-right: 1px solid rgba(255, 255, 255, 0.04);
-            font-size: 1.05rem;
-            font-variant-numeric: tabular-nums;
+        /* 姓名超链接样式 */
+        .name-link {
+            color: #e6edf3;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+        }
+        .name-link:hover {
+            color: #58a6ff; /* 鼠标悬浮变蓝 */
+            text-decoration: underline;
+        }
+        .name-no-link {
+            color: #8b949e;
+            cursor: not-allowed;
         }
 
-        /* 鼠标悬浮行高亮 */
-        tbody tr:hover td {
-            background-color: rgba(0, 240, 255, 0.04);
+        tr:hover td {
+            background-color: #21262d;
         }
-        tbody tr:hover td:first-child {
-            background-color: #1c2538;
-            color: #00f0ff;
+        
+        .has-data {
+            color: #3fb950;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(63, 185, 80, 0.4);
         }
 
-        /* 数字为 0 时的弱化显示 */
-        .count-zero { color: #4b5563; }
-        /* 有数据时的强调显示 */
-        .count-data { color: #64ffda; font-weight: bold; text-shadow: 0 0 10px rgba(100, 255, 218, 0.3); }
+        .zero {
+            color: #484f58;
+        }
 
+        .total-col {
+            color: #d2a8ff;
+            font-weight: bold;
+            border-left: 2px solid #30363d;
+        }
+
+        .footer-info {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #8b949e;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>🛡️ 靶场进度监控矩阵</h1>
-        <p id="last-update">正在加载数据...</p>
+    <!-- 头部提示区 -->
+    <div class="header-area">
+        <h1>少数人博客 & 靶场监控</h1>
+        <div class="tip">💡 点击表格中的姓名可直接跳转至对应博客</div>
     </div>
 
-    <div class="table-container">
-        <table id="matrix-table">
-            <thead>
-                <tr id="table-head">
-                    <!-- 表头由 JS 动态生成 -->
-                </tr>
-            </thead>
-            <tbody id="table-body">
-                <!-- 数据由 JS 动态生成 -->
-            </tbody>
-        </table>
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div>root@y11516:~/blog-monitor$ ./show_stats.sh</div>
+        </div>
+
+        <div class="table-container">
+            <table id="stats-table">
+                <thead>
+                    <tr id="table-header">
+                        <th>姓名</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr><td colspan="10">正在加载数据...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="footer-info">
+        数据最后更新: <span id="last-update">加载中...</span>
     </div>
 
     <script>
-        async function loadMatrix() {
+        async function loadData() {
             try {
                 const response = await fetch('data.json');
                 const data = await response.json();
                 
-                const headRow = document.getElementById('table-head');
+                const headerRow = document.getElementById('table-header');
                 const tbody = document.getElementById('table-body');
                 
-                // 1. 渲染表头：姓名 + 各个靶场
-                let headHTML = '<th>姓名 / 靶场</th>';
-                data.labs.forEach(lab => {
-                    headHTML += `<th>${lab}</th>`;
-                });
-                headRow.innerHTML = headHTML;
+                if (!data.blogs || data.blogs.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="10">暂无数据</td></tr>';
+                    return;
+                }
 
-                // 2. 渲染数据行
-                data.students.forEach(student => {
-                    let rowHTML = `<tr><td>${student.name}</td>`;
-                    data.labs.forEach(lab => {
-                        const count = student.counts[lab] || 0;
-                        // 根据数量给数字加样式
-                        if (count > 0) {
-                            rowHTML += `<td class="count-data">${count}</td>`;
-                        } else {
-                            rowHTML += `<td class="count-zero">0</td>`;
-                        }
-                    });
-                    rowHTML += '</tr>';
-                    tbody.innerHTML += rowHTML;
+                // 1. 动态生成表头
+                const targets = Object.keys(data.blogs[0].stats);
+                targets.forEach(target => {
+                    const th = document.createElement('th');
+                    th.textContent = target;
+                    headerRow.appendChild(th);
                 });
-
-                // 更新底部时间
-                document.getElementById('last-update').textContent = `最后更新: ${data.last_updated}`;
                 
+                const totalTh = document.createElement('th');
+                totalTh.textContent = '总计';
+                headerRow.appendChild(totalTh);
+
+                // 2. 渲染表格数据
+                tbody.innerHTML = '';
+                data.blogs.forEach(blog => {
+                    const tr = document.createElement('tr');
+                    
+                    // ======= 修改点：姓名列支持跳转 =======
+                    const nameTd = document.createElement('td');
+                    if (blog.url) {
+                        // 如果有博客地址，创建超链接
+                        const link = document.createElement('a');
+                        link.className = 'name-link';
+                        link.href = blog.url;
+                        link.target = '_blank'; // 新标签页打开
+                        link.textContent = blog.name;
+                        nameTd.appendChild(link);
+                    } else {
+                        // 没有博客地址，显示普通文本且不可点击
+                        nameTd.innerHTML = `<span class="name-no-link">${blog.name}</span>`;
+                    }
+                    tr.appendChild(nameTd);
+                    // ===================================
+
+                    // 各靶场数量列
+                    targets.forEach(target => {
+                        const count = blog.stats[target] || 0;
+                        const td = document.createElement('td');
+                        td.textContent = count > 0 ? count : '-';
+                        td.className = count > 0 ? 'has-data' : 'zero';
+                        tr.appendChild(td);
+                    });
+                    
+                    // 总计列
+                    const totalTd = document.createElement('td');
+                    totalTd.textContent = blog.total;
+                    totalTd.className = 'total-col';
+                    tr.appendChild(totalTd);
+
+                    tbody.appendChild(tr);
+                });
+
+                document.getElementById('last-update').textContent = data.last_updated;
             } catch (error) {
-                console.error("加载数据失败:", error);
-                document.getElementById('last-update').textContent = '数据加载失败，请检查 data.json';
+                console.error('加载数据失败:', error);
+                document.getElementById('table-body').innerHTML = '<tr><td colspan="10">数据加载失败，请检查 data.json。</td></tr>';
             }
         }
         
-        loadMatrix();
+        loadData();
     </script>
 </body>
 </html>
