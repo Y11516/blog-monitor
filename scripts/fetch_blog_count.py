@@ -6,7 +6,7 @@ from datetime import datetime
 # --- 1. 配置靶场关键词（修复了 LABS_MAPPING 未定义的报错） ---
 LABS_MAPPING = {
     "Bugku": ["bugku"],
-    "CTFHub": ["ctfhub", "ctf_hub"], 
+    "CTFHub": ["ctfhub", "ctf_hub","ctf-web"], 
     "Pikachu": ["pikachu"],
     "SQLi-Labs": ["sqli-labs", "sqli_labs", "sqllibs", "less-", "sqli"],
     "Upload-Labs": ["upload-labs", "upload_labs", "uploadlabs", "pass-"],
