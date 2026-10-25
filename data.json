@@ -24,7 +24,7 @@
       "stats": {
         "Bugku": 30,
         "CTFHub": 59,
-        "Pikachu": 18,
+        "Pikachu": 46,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -32,7 +32,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 107
+      "total": 135
     },
     {
       "name": "王海岩",
@@ -40,7 +40,7 @@
       "url": "https://why-ww.github.io/",
       "stats": {
         "Bugku": 29,
-        "CTFHub": 14,
+        "CTFHub": 15,
         "Pikachu": 0,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
@@ -49,7 +49,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 43
+      "total": 44
     },
     {
       "name": "何芊宏",
@@ -57,16 +57,16 @@
       "url": "https://heqianhong1114.github.io/myblog/",
       "stats": {
         "Bugku": 32,
-        "CTFHub": 73,
+        "CTFHub": 14,
         "Pikachu": 43,
-        "SQLi-Labs": 16,
+        "SQLi-Labs": 17,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
-        "RCE-Labs": 1,
+        "RCE-Labs": 2,
         "单点靶场": 0
       },
-      "total": 165
+      "total": 108
     },
     {
       "name": "王冠壹",
@@ -91,7 +91,7 @@
       "url": "https://m02142008.github.io/",
       "stats": {
         "Bugku": 30,
-        "CTFHub": 30,
+        "CTFHub": 34,
         "Pikachu": 0,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
@@ -100,7 +100,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 60
+      "total": 64
     },
     {
       "name": "刘璧瑞",
@@ -126,7 +126,7 @@
       "stats": {
         "Bugku": 31,
         "CTFHub": 51,
-        "Pikachu": 0,
+        "Pikachu": 5,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -134,7 +134,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 82
+      "total": 87
     },
     {
       "name": "刘家怡",
@@ -142,8 +142,8 @@
       "url": "https://gysbfff.github.io/",
       "stats": {
         "Bugku": 30,
-        "CTFHub": 52,
-        "Pikachu": 0,
+        "CTFHub": 51,
+        "Pikachu": 11,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -151,8 +151,8 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 82
+      "total": 92
     }
   ],
-  "last_updated": "2026-10-24 09:27:43"
+  "last_updated": "2026-10-25 04:22:15"
 }
