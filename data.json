@@ -26,13 +26,13 @@
         "CTFHub": 59,
         "Pikachu": 46,
         "SQLi-Labs": 0,
-        "Upload-Labs": 2,
+        "Upload-Labs": 3,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 137
+      "total": 138
     },
     {
       "name": "王海岩",
@@ -40,7 +40,7 @@
       "url": "https://why-ww.github.io/",
       "stats": {
         "Bugku": 29,
-        "CTFHub": 43,
+        "CTFHub": 50,
         "Pikachu": 0,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
@@ -49,7 +49,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 72
+      "total": 79
     },
     {
       "name": "何芊宏",
@@ -59,14 +59,14 @@
         "Bugku": 32,
         "CTFHub": 74,
         "Pikachu": 43,
-        "SQLi-Labs": 51,
+        "SQLi-Labs": 67,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 200
+      "total": 216
     },
     {
       "name": "王冠壹",
@@ -91,7 +91,7 @@
       "url": "https://m02142008.github.io/",
       "stats": {
         "Bugku": 30,
-        "CTFHub": 49,
+        "CTFHub": 50,
         "Pikachu": 0,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
@@ -100,7 +100,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 79
+      "total": 80
     },
     {
       "name": "刘璧瑞",
@@ -154,5 +154,5 @@
       "total": 96
     }
   ],
-  "last_updated": "2026-10-28 12:50:07"
+  "last_updated": "2026-10-28 14:54:53"
 }
