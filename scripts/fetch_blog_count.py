@@ -4,9 +4,11 @@ import os
 from datetime import datetime
 
 # --- 1. 配置靶场关键词（修复了 LABS_MAPPING 未定义的报错） ---
+# --- 1. 配置靶场关键词 ---
 LABS_MAPPING = {
     "Bugku": ["bugku"],
-    "CTFHub": ["ctfhub", "ctf_hub","ctf-web","CTFHub","CTDHub"], 
+    # 👇 加上了错别字 ctdhub
+    "CTFHub": ["ctfhub", "ctf_hub", "ctf-web", "ctf-hub", "ctdhub"], 
     "Pikachu": ["pikachu"],
     "SQLi-Labs": ["sqli-labs", "sqli_labs", "sqllibs", "less-", "sqli"],
     "Upload-Labs": ["upload-labs", "upload_labs", "uploadlabs", "pass-"],
