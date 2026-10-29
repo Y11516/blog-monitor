@@ -26,13 +26,13 @@
         "CTFHub": 59,
         "Pikachu": 46,
         "SQLi-Labs": 0,
-        "Upload-Labs": 3,
+        "Upload-Labs": 8,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 138
+      "total": 143
     },
     {
       "name": "王海岩",
@@ -40,7 +40,7 @@
       "url": "https://why-ww.github.io/",
       "stats": {
         "Bugku": 29,
-        "CTFHub": 50,
+        "CTFHub": 52,
         "Pikachu": 0,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
@@ -49,7 +49,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 79
+      "total": 81
     },
     {
       "name": "何芊宏",
@@ -154,5 +154,5 @@
       "total": 96
     }
   ],
-  "last_updated": "2026-10-28 14:54:53"
+  "last_updated": "2026-10-29 05:29:15"
 }
