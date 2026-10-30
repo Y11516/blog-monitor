@@ -69,13 +69,13 @@
       "total": 218
     },
     {
-      "name": "王冠壹",
-      "repo": "wgy0828/wgy0828",
-      "url": "https://wgy0828.github.io/wgy0828/",
+      "name": "贺佳琪",
+      "repo": "cecilia-scintilla/cecilia-scintilla.github.io",
+      "url": "https://cecilia-scintilla.github.io/",
       "stats": {
-        "Bugku": 22,
-        "CTFHub": 0,
-        "Pikachu": 0,
+        "Bugku": 30,
+        "CTFHub": 51,
+        "Pikachu": 45,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -83,7 +83,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 22
+      "total": 126
     },
     {
       "name": "张紫陌",
@@ -103,30 +103,13 @@
       "total": 80
     },
     {
-      "name": "刘璧瑞",
-      "repo": "12128848/12128848.github.io",
-      "url": "https://12128848.github.io/",
-      "stats": {
-        "Bugku": 32,
-        "CTFHub": 1,
-        "Pikachu": 0,
-        "SQLi-Labs": 10,
-        "Upload-Labs": 0,
-        "DVWA": 0,
-        "Burp-Labs": 0,
-        "RCE-Labs": 2,
-        "单点靶场": 0
-      },
-      "total": 45
-    },
-    {
       "name": "刘欣赢",
       "repo": "eclair-tracy/eclair-tracy.github.io",
       "url": "https://eclair-tracy.github.io/",
       "stats": {
         "Bugku": 31,
         "CTFHub": 51,
-        "Pikachu": 32,
+        "Pikachu": 34,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -134,7 +117,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 114
+      "total": 116
     },
     {
       "name": "刘家怡",
@@ -143,7 +126,7 @@
       "stats": {
         "Bugku": 30,
         "CTFHub": 51,
-        "Pikachu": 20,
+        "Pikachu": 30,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -151,8 +134,8 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 101
+      "total": 111
     }
   ],
-  "last_updated": "2026-10-30 05:29:19"
+  "last_updated": "2026-10-30 15:15:41"
 }
