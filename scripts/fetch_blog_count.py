@@ -25,9 +25,9 @@ BLOGS_CONFIG = [
     {"name": "郭梓文", "repo": "gz2008/task01", "branch": "main", "url": "https://gz2008.github.io/task01/"},
     {"name": "王海岩", "repo": "why-ww/why-ww.github.io", "branch": "main", "url": "https://why-ww.github.io/"},
     {"name": "何芊宏", "repo": "heqianhong1114/myblog", "branch": "main", "url": "https://heqianhong1114.github.io/myblog/"},
-    {"name": "王冠壹", "repo": "wgy0828/wgy0828", "branch": "main", "url": "https://wgy0828.github.io/wgy0828/"},
+    {"name": "贺佳琪", "repo": "cecilia-scintilla/cecilia-scintilla.github.io", "url": "https://cecilia-scintilla.github.io/", "branch": "main"},
     {"name": "张紫陌", "repo": "m02142008/m02142008.github.io", "branch": "main", "url": "https://m02142008.github.io/"},
-    {"name": "刘璧瑞", "repo": "12128848/12128848.github.io", "branch": "main", "url": "https://12128848.github.io/"},
+    
     {"name": "刘欣赢", "repo": "eclair-tracy/eclair-tracy.github.io", "branch": "main", "url": "https://eclair-tracy.github.io/"},
     {"name": "刘家怡", "repo": "gysbfff/gysbfff.github.io", "branch": "main", "url": "https://gysbfff.github.io/"}
 ]
