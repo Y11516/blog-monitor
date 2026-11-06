@@ -56,10 +56,29 @@ def get_student_lab_counts(repo, branch):
             if any(ex in path for ex in ["index", "readme", "tags", "categories", "archives"]): continue
             
             # 匹配靶场
+                        # 1. 先按常规匹配路径（文件夹名或文件名）
+            matched = False
             for lab_name, keywords in LABS_MAPPING.items():
                 if any(kw in path for kw in keywords):
                     counts[lab_name] += 1
+                    matched = True
                     break
+            
+            # 2. 针对李梦涵这类文件名没带关键词的同学，强行读取内容解析
+            if not matched and "adelinecui" in repo and path.endswith('.md'):
+                try:
+                    # 构造 raw 文件的直链，去请求真实内容
+                    raw_url = f"https://raw.githubusercontent.com/{repo}/{branch}/{item['path']}"
+                    raw_res = requests.get(raw_url, timeout=5)
+                    # 只截取前 300 个字符（YAML 头部通常很短，且已被转小写）
+                    content_header = raw_res.text[:300].lower() 
+                    
+                    for lab_name, keywords in LABS_MAPPING.items():
+                        if any(kw in content_header for kw in keywords):
+                            counts[lab_name] += 1
+                            break
+                except:
+                    pass # 如果读取失败就跳过，不影响整体运行
         return counts
     except Exception as e:
         print(f"  [错误] 获取 {repo} 数据失败: {e}")
