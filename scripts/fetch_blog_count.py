@@ -64,7 +64,7 @@ def get_student_lab_counts(repo, branch):
                     matched = True
                     break
             
-            # 2. 针对李梦涵这类文件名没带关键词的同学，强行读取内容解析
+            # 2. 针对文件名没带关键词的同学，强行读取内容解析
             if not matched and "adelinecui" in repo and path.endswith('.md'):
                 try:
                     # 构造 raw 文件的直链，去请求真实内容
