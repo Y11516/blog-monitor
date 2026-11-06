@@ -92,7 +92,7 @@
       "stats": {
         "Bugku": 30,
         "CTFHub": 50,
-        "Pikachu": 5,
+        "Pikachu": 6,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -100,7 +100,7 @@
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 85
+      "total": 86
     },
     {
       "name": "刘欣赢",
@@ -127,15 +127,15 @@
         "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 47,
-        "SQLi-Labs": 7,
+        "SQLi-Labs": 8,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 135
+      "total": 136
     }
   ],
-  "last_updated": "2026-11-05 06:20:49"
+  "last_updated": "2026-11-06 06:15:25"
 }
