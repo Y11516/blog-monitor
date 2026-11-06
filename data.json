@@ -103,6 +103,23 @@
       "total": 86
     },
     {
+      "name": "李梦涵",
+      "repo": "adelinecui/adelinecui.github.io",
+      "url": "https://adelinecui.github.io/",
+      "stats": {
+        "Bugku": 13,
+        "CTFHub": 4,
+        "Pikachu": 1,
+        "SQLi-Labs": 1,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 3,
+        "单点靶场": 0
+      },
+      "total": 22
+    },
+    {
       "name": "刘欣赢",
       "repo": "eclair-tracy/eclair-tracy.github.io",
       "url": "https://eclair-tracy.github.io/",
@@ -137,5 +154,5 @@
       "total": 136
     }
   ],
-  "last_updated": "2026-11-06 06:15:25"
+  "last_updated": "2026-11-06 08:30:53"
 }
