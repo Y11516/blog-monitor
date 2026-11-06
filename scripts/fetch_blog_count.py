@@ -27,7 +27,7 @@ BLOGS_CONFIG = [
     {"name": "何芊宏", "repo": "heqianhong1114/myblog", "branch": "main", "url": "https://heqianhong1114.github.io/myblog/"},
     {"name": "贺佳琪", "repo": "cecilia-scintilla/cecilia-scintilla.github.io", "url": "https://cecilia-scintilla.github.io/", "branch": "main"},
     {"name": "张紫陌", "repo": "m02142008/m02142008.github.io", "branch": "main", "url": "https://m02142008.github.io/"},
-    
+    {"name": "李梦涵", "repo": "adelinecui/adelinecui.github.io", "url": "https://adelinecui.github.io/", "branch": "main"},
     {"name": "刘欣赢", "repo": "eclair-tracy/eclair-tracy.github.io", "branch": "main", "url": "https://eclair-tracy.github.io/"},
     {"name": "刘家怡", "repo": "gysbfff/gysbfff.github.io", "branch": "main", "url": "https://gysbfff.github.io/"}
 ]
