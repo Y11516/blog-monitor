@@ -144,15 +144,15 @@
         "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 47,
-        "SQLi-Labs": 15,
+        "SQLi-Labs": 17,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 143
+      "total": 145
     }
   ],
-  "last_updated": "2026-11-10 06:59:29"
+  "last_updated": "2026-11-11 05:50:58"
 }
