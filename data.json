@@ -144,15 +144,32 @@
         "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 47,
-        "SQLi-Labs": 19,
+        "SQLi-Labs": 20,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 147
+      "total": 148
+    },
+    {
+      "name": "刘璧瑞",
+      "repo": "\thttps://12128848.github.io/",
+      "url": "https://12128848.github.io/",
+      "stats": {
+        "Bugku": 0,
+        "CTFHub": 0,
+        "Pikachu": 0,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 0,
+        "单点靶场": 0
+      },
+      "total": 0
     }
   ],
-  "last_updated": "2026-11-15 06:03:58"
+  "last_updated": "2026-11-15 06:20:22"
 }
