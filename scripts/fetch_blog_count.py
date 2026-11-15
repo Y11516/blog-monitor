@@ -30,6 +30,7 @@ BLOGS_CONFIG = [
     {"name": "李梦涵", "repo": "adelinecui/adelinecui.github.io", "url": "https://adelinecui.github.io/", "branch": "main"},
     {"name": "刘欣赢", "repo": "eclair-tracy/eclair-tracy.github.io", "branch": "main", "url": "https://eclair-tracy.github.io/"},
     {"name": "刘家怡", "repo": "gysbfff/gysbfff.github.io", "branch": "main", "url": "https://gysbfff.github.io/"}
+    {"name": "刘璧瑞", "repo": "	https://12128848.github.io/", "branch": "main", "url": "https://12128848.github.io/"}
 ]
 
 HEADERS = {"Accept": "application/vnd.github.v3+json"}
