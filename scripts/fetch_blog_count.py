@@ -56,8 +56,7 @@ def get_student_lab_counts(repo, branch):
             if not (path.endswith('.md') or path.endswith('.html')): continue
             if any(ex in path for ex in ["index", "readme", "tags", "categories", "archives"]): continue
             
-            # 匹配靶场
-                        # 1. 先按常规匹配路径（文件夹名或文件名）
+                       # 1. 先按常规匹配路径（看文件夹名或文件名有没有靶场关键字）
             matched = False
             for lab_name, keywords in LABS_MAPPING.items():
                 if any(kw in path for kw in keywords):
@@ -65,21 +64,31 @@ def get_student_lab_counts(repo, branch):
                     matched = True
                     break
             
-            # 2. 针对文件名没带关键词的同学，强行读取内容解析
-            if not matched and ("adelinecui" in repo or "12128848" in repo) and path.endswith('.md'):
+            # 2. 针对文件名没带关键词的同学（李梦涵、刘璧瑞），读取文件内容解析
+            if not matched and ("adelinecui" in repo or "12128848" in repo) and (path.endswith('.md') or path.endswith('.html')):
                 try:
-                    # 构造 raw 文件的直链，去请求真实内容
                     raw_url = f"https://raw.githubusercontent.com/{repo}/{branch}/{item['path']}"
                     raw_res = requests.get(raw_url, timeout=5)
-                    # 只截取前 300 个字符（YAML 头部通常很短，且已被转小写）
-                    content_header = raw_res.text[:300].lower() 
+                    # 把截取长度加大到 2000 个字符，覆盖绝大多数文章的头部和正文开头
+                    content = raw_res.text[:2000].lower() 
                     
+                    # 在正文里找有没有靶场的名字
                     for lab_name, keywords in LABS_MAPPING.items():
-                        if any(kw in content_header for kw in keywords):
+                        if any(kw in content for kw in keywords):
                             counts[lab_name] += 1
+                            matched = True
                             break
                 except:
-                    pass # 如果读取失败就跳过，不影响整体运行
+                    pass
+            
+            # ================= 👇 核心兜底逻辑（如果正文实在找不到，也不放过） 👇 =================
+            if not matched and "12128848" in repo:
+                # 排除掉他写的无关注释和杂谈
+                excludes = ["签到", "怎么玩", "去哪里玩", "都有哪些", "比赛里"]
+                if not any(ex in path for ex in excludes):
+                    # 既然他是 CTF 文章，又没匹配上别人，直接强行算作 CTFHub
+                    counts["CTFHub"] += 1
+            
         return counts
     except Exception as e:
         print(f"  [错误] 获取 {repo} 数据失败: {e}")
