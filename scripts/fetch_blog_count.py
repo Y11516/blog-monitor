@@ -16,7 +16,7 @@ LABS_MAPPING = {
     "单点靶场": ["single", "单点"]
 }
 
-# --- 2. 少数同学的信息配置（注意最后有中括号） ---
+# --- 2. 少数同学的信息配置（注意最后的闭合括号） ---
 BLOGS_CONFIG = [
     {"name": "魏紫钰", "repo": "Y11516/Y11516.github.io", "branch": "main", "url": "https://y11516.github.io/"},
     {"name": "郭梓文", "repo": "gz2008/task01", "branch": "main", "url": "https://gz2008.github.io/task01/"},
@@ -53,7 +53,7 @@ def get_student_lab_counts(repo, branch):
             if not (path.endswith('.md') or path.endswith('.html')): continue
             if any(ex in path for ex in ["index", "readme", "tags", "categories", "archives"]): continue
             
-            # 1. 按路径常规匹配
+            # 1. 先按常规匹配路径（看文件夹名或文件名）
             matched = False
             for lab_name, keywords in LABS_MAPPING.items():
                 if any(kw in path for kw in keywords):
@@ -61,11 +61,24 @@ def get_student_lab_counts(repo, branch):
                     matched = True
                     break
             
-            # 2. 针对刘璧瑞的兜底（删除了极慢的读文件逻辑，直接用文件名判断）
-            if not matched and "12128848" in repo:
-                excludes = ["签到", "怎么玩", "去哪里玩", "都有哪些", "比赛里"]
-                if not any(ex in path for ex in excludes):
-                    counts["CTFHub"] += 1
+            # 2. 如果文件名没带靶场名，去读取文件真实内容找！
+            if not matched and ("adelinecui" in repo or "12128848" in repo):
+                try:
+                    # 直接请求该文件的真实 raw 内容
+                    raw_url = f"https://raw.githubusercontent.com/{repo}/{branch}/{item['path']}"
+                    # 核心保护：设置 5 秒超时，绝不卡死整个程序！
+                    raw_res = requests.get(raw_url, timeout=5)
+                    
+                    # 只读前 3000 个字符（找 YAML 头部或者正文开头的 "平台：CTFHub" 绝对够了）
+                    content = raw_res.text[:3000].lower()
+                    
+                    for lab_name, keywords in LABS_MAPPING.items():
+                        if any(kw in content for kw in keywords):
+                            counts[lab_name] += 1
+                            break
+                except Exception as e:
+                    # 如果这篇读取超时了，直接跳过，不影响其他的
+                    pass
                     
         return counts
     except Exception as e:
@@ -76,13 +89,6 @@ def main():
     results = []
     for blog in BLOGS_CONFIG:
         counts = get_student_lab_counts(blog["repo"], blog.get("branch", "main"))
-        
-        # ================= 👇 物理外挂（如果跑完刘璧瑞还是不对，直接解开这三行的注释） 👇 =================
-        # if blog["name"] == "刘璧瑞":
-        #     counts["Bugku"] = 32
-        #     counts["CTFHub"] = 50
-        # ==================================================================================================
-        
         total = sum(counts.values())
         
         results.append({
