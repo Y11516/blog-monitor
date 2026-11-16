@@ -110,14 +110,14 @@
         "Bugku": 34,
         "CTFHub": 50,
         "Pikachu": 42,
-        "SQLi-Labs": 1,
+        "SQLi-Labs": 3,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 3,
         "单点靶场": 0
       },
-      "total": 130
+      "total": 132
     },
     {
       "name": "刘欣赢",
@@ -155,21 +155,21 @@
     },
     {
       "name": "刘璧瑞",
-      "repo": "\thttps://12128848.github.io/",
-      "url": "https://12128848.github.io/",
+      "repo": "12128848/12128848.github.io",
+      "url": "https://12128848.github.io",
       "stats": {
-        "Bugku": 0,
-        "CTFHub": 0,
-        "Pikachu": 0,
-        "SQLi-Labs": 0,
-        "Upload-Labs": 0,
+        "Bugku": 32,
+        "CTFHub": 38,
+        "Pikachu": 43,
+        "SQLi-Labs": 78,
+        "Upload-Labs": 21,
         "DVWA": 0,
         "Burp-Labs": 0,
-        "RCE-Labs": 0,
+        "RCE-Labs": 2,
         "单点靶场": 0
       },
-      "total": 0
+      "total": 214
     }
   ],
-  "last_updated": "2026-11-16 06:59:18"
+  "last_updated": "2026-11-16 09:05:26"
 }
