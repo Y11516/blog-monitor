@@ -41,7 +41,7 @@
       "stats": {
         "Bugku": 29,
         "CTFHub": 52,
-        "Pikachu": 16,
+        "Pikachu": 18,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -49,7 +49,7 @@
         "RCE-Labs": 1,
         "单点靶场": 0
       },
-      "total": 98
+      "total": 100
     },
     {
       "name": "何芊宏",
@@ -76,14 +76,14 @@
         "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 45,
-        "SQLi-Labs": 7,
+        "SQLi-Labs": 13,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 133
+      "total": 139
     },
     {
       "name": "张紫陌",
@@ -110,14 +110,14 @@
         "Bugku": 34,
         "CTFHub": 50,
         "Pikachu": 42,
-        "SQLi-Labs": 3,
+        "SQLi-Labs": 12,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 3,
         "单点靶场": 0
       },
-      "total": 132
+      "total": 141
     },
     {
       "name": "刘欣赢",
@@ -127,14 +127,14 @@
         "Bugku": 31,
         "CTFHub": 51,
         "Pikachu": 44,
-        "SQLi-Labs": 8,
+        "SQLi-Labs": 14,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 134
+      "total": 140
     },
     {
       "name": "刘家怡",
@@ -171,5 +171,5 @@
       "total": 214
     }
   ],
-  "last_updated": "2026-11-16 09:05:26"
+  "last_updated": "2026-11-17 07:40:14"
 }
