@@ -154,6 +154,23 @@
       "total": 149
     },
     {
+      "name": "佟奕轩",
+      "repo": "12eternity31/12eternity31.github.io",
+      "url": "https://12eternity31.github.io/",
+      "stats": {
+        "Bugku": 30,
+        "CTFHub": 50,
+        "Pikachu": 44,
+        "SQLi-Labs": 0,
+        "Upload-Labs": 0,
+        "DVWA": 0,
+        "Burp-Labs": 0,
+        "RCE-Labs": 2,
+        "单点靶场": 0
+      },
+      "total": 126
+    },
+    {
       "name": "刘璧瑞",
       "repo": "12128848/12128848.github.io",
       "url": "https://12128848.github.io",
@@ -171,5 +188,5 @@
       "total": 214
     }
   ],
-  "last_updated": "2026-11-17 07:40:14"
+  "last_updated": "2026-11-17 14:52:17"
 }
