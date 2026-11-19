@@ -28,7 +28,8 @@ BLOGS_CONFIG = [
     {"name": "刘欣赢", "repo": "eclair-tracy/eclair-tracy.github.io", "branch": "main", "url": "https://eclair-tracy.github.io/"},
     {"name": "刘家怡", "repo": "gysbfff/gysbfff.github.io", "branch": "main", "url": "https://gysbfff.github.io/"},
     {"name": "佟奕轩", "repo": "12eternity31/12eternity31.github.io", "url": "https://12eternity31.github.io/", "branch": "main"},
-    {"name": "刘璧瑞", "repo": "12128848/12128848.github.io", "url": "https://12128848.github.io", "branch": "main"}
+    {"name": "刘璧瑞", "repo": "12128848/12128848.github.io", "url": "https://12128848.github.io", "branch": "main"},
+    {"name": "邓博元", "repo": "buu2026sec078k/buu2026sec078k.github.io", "url": "https://buu2026sec078k.github.io/", "branch": "main"}
 ]
 
 HEADERS = {"Accept": "application/vnd.github.v3+json"}
