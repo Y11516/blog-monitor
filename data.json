@@ -41,7 +41,7 @@
       "stats": {
         "Bugku": 29,
         "CTFHub": 52,
-        "Pikachu": 37,
+        "Pikachu": 42,
         "SQLi-Labs": 0,
         "Upload-Labs": 0,
         "DVWA": 0,
@@ -49,7 +49,7 @@
         "RCE-Labs": 1,
         "单点靶场": 0
       },
-      "total": 119
+      "total": 124
     },
     {
       "name": "何芊宏",
@@ -110,14 +110,14 @@
         "Bugku": 34,
         "CTFHub": 50,
         "Pikachu": 42,
-        "SQLi-Labs": 30,
+        "SQLi-Labs": 44,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 3,
         "单点靶场": 0
       },
-      "total": 159
+      "total": 173
     },
     {
       "name": "刘欣赢",
@@ -144,14 +144,14 @@
         "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 47,
-        "SQLi-Labs": 35,
+        "SQLi-Labs": 43,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 163
+      "total": 171
     },
     {
       "name": "佟奕轩",
@@ -161,14 +161,14 @@
         "Bugku": 30,
         "CTFHub": 50,
         "Pikachu": 44,
-        "SQLi-Labs": 0,
+        "SQLi-Labs": 20,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 2,
         "单点靶场": 0
       },
-      "total": 126
+      "total": 146
     },
     {
       "name": "刘璧瑞",
@@ -205,5 +205,5 @@
       "total": 76
     }
   ],
-  "last_updated": "2026-11-23 07:14:07"
+  "last_updated": "2026-11-24 09:37:45"
 }
