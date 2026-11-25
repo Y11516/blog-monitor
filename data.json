@@ -76,14 +76,14 @@
         "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 45,
-        "SQLi-Labs": 19,
+        "SQLi-Labs": 39,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 145
+      "total": 165
     },
     {
       "name": "张紫陌",
@@ -110,14 +110,14 @@
         "Bugku": 34,
         "CTFHub": 50,
         "Pikachu": 42,
-        "SQLi-Labs": 44,
+        "SQLi-Labs": 46,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 3,
         "单点靶场": 0
       },
-      "total": 173
+      "total": 175
     },
     {
       "name": "刘欣赢",
@@ -144,14 +144,14 @@
         "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 47,
-        "SQLi-Labs": 43,
+        "SQLi-Labs": 60,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 171
+      "total": 188
     },
     {
       "name": "佟奕轩",
@@ -205,5 +205,5 @@
       "total": 76
     }
   ],
-  "last_updated": "2026-11-24 09:37:45"
+  "last_updated": "2026-11-25 08:09:03"
 }
