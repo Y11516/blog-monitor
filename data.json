@@ -144,14 +144,14 @@
         "Bugku": 30,
         "CTFHub": 51,
         "Pikachu": 47,
-        "SQLi-Labs": 66,
+        "SQLi-Labs": 69,
         "Upload-Labs": 0,
         "DVWA": 0,
         "Burp-Labs": 0,
         "RCE-Labs": 0,
         "单点靶场": 0
       },
-      "total": 194
+      "total": 197
     },
     {
       "name": "佟奕轩",
@@ -205,5 +205,5 @@
       "total": 76
     }
   ],
-  "last_updated": "2026-11-26 07:57:44"
+  "last_updated": "2026-11-27 07:58:54"
 }
